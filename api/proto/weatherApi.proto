@@ -1,0 +1,16 @@
+syntax = "proto3";
+option go_package = "weather_api/weather_service";
+
+package weather_api;
+
+service WeatherService{
+  rpc GetAverageWeather(AverageWeatherRequest) returns (AverageWeatherResponse){}
+}
+
+message AverageWeatherRequest{
+  string city = 1;
+}
+
+message AverageWeatherResponse{
+  float averageTemperature = 1;
+}
